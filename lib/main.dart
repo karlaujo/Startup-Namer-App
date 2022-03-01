@@ -62,6 +62,15 @@ class _RandomWordsState extends State<RandomWords> {
       color: alreadySaved ? Colors.red : null,
       semanticLabel: alreadySaved ? 'Remove from saved' : 'Save',
     ), 
+    onTap: () {      // NEW lines from here...
+      setState(() {
+        if (alreadySaved) {
+          _saved.remove(_suggestions[index]);
+        } else { 
+          _saved.add(_suggestions[index]); 
+        } 
+      });
+    },
           );
           // #enddocregion listTile
         },
